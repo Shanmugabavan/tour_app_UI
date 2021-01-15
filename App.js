@@ -6,6 +6,7 @@ import LoginScreen from './screens/loginScreen';
 import EagleEyeView from './screens/eagleEyeView';
 import SampleCard from './screens/sampleCard'
 import VisitingArea from './screens/visitingAreas'
+import EditProfileScreen from './screens/editProfile'
 
 const {Navigator,Screen}=createStackNavigator();
 
@@ -17,7 +18,7 @@ export default class App extends Component{
           screenOptions={{
             headerShown: false,
           }}>
-          <Screen name="mainScreen" component={VisitingArea}/>
+          <Screen name="mainScreen" component={EditProfileScreen}/>
         </Navigator>
       </NavigationContainer>
     );

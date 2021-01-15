@@ -62,7 +62,7 @@ export default class VisitingArea extends Component {
                 placeholder="Search" 
                 style={styles.input} />
         </View>
-        <View style={styles.imageContainer}>
+        <TouchableOpacity style={styles.imageContainer}>
           <View style={styles.imageView}>
             <Image 
             source={require("../assets/images/ninearg.jpg")}
@@ -73,8 +73,8 @@ export default class VisitingArea extends Component {
                 
                 />
           </View>
-        </View>
-        <View style={styles.imageContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.imageContainer}>
           <View style={styles.imageView}>
             <Image 
             source={require("../assets/images/dampulla.jpg")}
@@ -84,8 +84,8 @@ export default class VisitingArea extends Component {
                 description="Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour" 
                 />
           </View>
-        </View>
-        <View style={styles.imageContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.imageContainer}>
           <View style={styles.imageView}>
             <Image 
             source={require("../assets/images/dampulla.jpg")}
@@ -95,7 +95,7 @@ export default class VisitingArea extends Component {
                 description="Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour" 
                 />
           </View>
-        </View>
+        </TouchableOpacity>
         
       </ScrollView>
     );
