@@ -1,5 +1,5 @@
 
-import { Right } from 'native-base';
+import { Content, Right } from 'native-base';
 import React, { Component,useState } from 'react';
 import {View,Text, SafeAreaView, Image,ScrollView,TouchableOpacity,Switch,TextInput} from "react-native";
 import {Dimensions, StyleSheet} from "react-native";
@@ -42,7 +42,7 @@ function ImageButton({title,description}){
 }
 
 
-export default class VisitingArea extends Component {
+export default class DetailedVisitingArea extends Component {
   render(){
     return(
       <ScrollView>
@@ -51,52 +51,26 @@ export default class VisitingArea extends Component {
             centerComponent={{ text: 'Visiting Areas', style: { color: '#fff',fontSize:30, fontWeight:"bold" } }}
             // rightComponent={{ icon: 'home', color: '#fff' }}
         /> */}
-        <View style={styles.inputContainer} >
-                <FontAwesome5 style={{
-                    position:'absolute',
-                    left:0,
-                    top:5,
-                }}
-                name="search" size={20}/>
-                <TextInput
-                placeholderTextColor='#aaa' 
-                placeholder="Search" 
-                style={styles.input} />
-        </View>
-        <TouchableOpacity style={styles.imageContainer} onPress={() => this.props.navigation.navigate('DetailedVisitingArea')}>
+        <ScrollView style={styles.imageContainer}>
           <View style={styles.imageView}>
             <Image 
             source={require("../assets/images/ninearg.jpg")}
             style={styles.image}/>
             <ImageButton 
                 title="Rumassala" 
-                description="Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour"
+                description="Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour"
                 
                 />
           </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.imageContainer} onPress={() => this.props.navigation.navigate('DetailedVisitingArea')}>
-          <View style={styles.imageView}>
-            <Image 
-            source={require("../assets/images/dampulla.jpg")}
-            style={styles.image}/>
-            <ImageButton 
-                title="Mirissa"
-                description="Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour" 
-                />
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.imageContainer} onPress={() => this.props.navigation.navigate('DetailedVisitingArea')}>
-          <View style={styles.imageView}>
-            <Image 
-            source={require("../assets/images/dampulla.jpg")}
-            style={styles.image}/>
-            <ImageButton 
-                title="Unawatta"
-                description="Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour" 
-                />
-          </View>
-        </TouchableOpacity>
+        </ScrollView>
         
       </ScrollView>
     );
@@ -114,7 +88,7 @@ export const styles=StyleSheet.create({
     },
     imageView:{
         width:width,
-        height:height/1.5,
+        height:height,
         // borderWidth:1,
         borderColor:"#000",
         marginHorizontal:10,
@@ -124,8 +98,8 @@ export const styles=StyleSheet.create({
 	    width: 0,
 	    height: 5,
 },
-shadowOpacity: 0.25,
-shadowRadius: 3.84,
+// shadowOpacity: 0.25,
+// shadowRadius: 3.84,
 
 elevation: 5,
     },

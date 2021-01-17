@@ -1,6 +1,7 @@
 import React, {Component} from  'react';
 import {platform,StyleSheet,Text,View,TextInput,TouchableOpacity} from 'react-native';
 import {styles} from '../styles/loginScreenStyle';
+import Routing from '../App'
 
 
 export default class LoginScreen extends Component{
@@ -16,7 +17,10 @@ export default class LoginScreen extends Component{
         <TextInput style={styles.input} placeholder='Password'>
           
         </TextInput>
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity 
+          style={styles.loginButton}
+          onPress={() => this.props.navigation.navigate('EagleEyeView')}
+          >
           <Text style={styles.login}>Login</Text>
         </TouchableOpacity>
 

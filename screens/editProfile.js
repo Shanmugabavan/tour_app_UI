@@ -54,11 +54,11 @@ export default class EditProfileScreen extends Component{
         );
         return(
             <View style={styles.container}>
-                <Header
+                {/* <Header
                 // leftComponent={{ icon: 'menu', color: '#fff' }}
                 centerComponent={{ text: 'Edit Profile', style: { color: '#fff',fontSize:30, fontWeight:"bold" } }}
                 // rightComponent={{ icon: 'home', color: '#fff' }}
-                />
+                /> */}
                 <BottomSheet
                     ref={this.bs}
                     snapPoints={[300,100,0]}

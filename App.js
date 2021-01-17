@@ -1,26 +1,56 @@
 import React, { Component } from "react";
 import {NavigationContainer} from "@react-navigation/native";
-import {createStackNavigator} from "@react-navigation/stack";
+// import {createStackNavigator} from "@react-navigation/stack"; //another navigator
+import {  createStackNavigator } from 'react-navigation-stack';  
+import { View, Text, Button } from 'react-native';  
+import {  createAppContainer } from 'react-navigation';  
 import MainScreen from './screens/mainScreen';
 import LoginScreen from './screens/loginScreen';
 import EagleEyeView from './screens/eagleEyeView';
-import SampleCard from './screens/sampleCard'
+import ScheduleRouting from './screens/ScheduleRouting'
 import VisitingArea from './screens/visitingAreas'
 import EditProfileScreen from './screens/editProfile'
+import DetailedVisitingArea from './screens/detailed_visitingArea'
+// import TabNavigator from './components/BottomNavigator'
+// import Routing from './routing'
 
-const {Navigator,Screen}=createStackNavigator();
+const AppNavigator = createStackNavigator(  
+  {  
+      EagleEyeView: EagleEyeView,  
+      VisitingArea: VisitingArea,
+      EditProfileScreen:EditProfileScreen,
+      LoginScreen:LoginScreen,
+      ScheduledRouting:ScheduleRouting,
+      DetailedVisitingArea:DetailedVisitingArea,
+      // TabNavigator:TabNavigator,
 
-export default class App extends Component{
-  render(){
-    return(
-      <NavigationContainer>
-        <Navigator
-          screenOptions={{
-            headerShown: false,
-          }}>
-          <Screen name="mainScreen" component={EditProfileScreen}/>
-        </Navigator>
-      </NavigationContainer>
-    );
-  }
+  },  
+  {  
+      initialRouteName: "LoginScreen"  
+  }  
+);  
+
+const AppContainer = createAppContainer(AppNavigator);  
+export default class Routing extends React.Component {  
+  render() {  
+      return <AppContainer />;  
+  }  
 }  
+
+// const {Navigator,Screen}=createStackNavigator();
+
+// export default class App extends Component{
+//   render(){
+//     return(
+//       <NavigationContainer>
+//         <Navigator
+//           screenOptions={{
+//             headerShown: false,
+//           }}>
+//           <Screen name="mainScreen" component={Routing}/>
+//         </Navigator>
+//       </NavigationContainer>
+//     );
+//   }
+// }  
+

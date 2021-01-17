@@ -14,6 +14,19 @@ export const styles=StyleSheet.create({
         marginHorizontal:10,
         // borderRadius:20,
     },
+    imageContainerProfile:{
+        flexDirection:"row",
+        marginTop:30,
+        // backgroundColor:"blue",
+    },
+    imageViewProfile:{
+        width:width,
+        height:height/3.5,
+        // borderWidth:1,
+        // borderColor:"#000",
+        marginHorizontal:10,
+        // borderRadius:20,
+    },
     
     image:{
         width: '100%',

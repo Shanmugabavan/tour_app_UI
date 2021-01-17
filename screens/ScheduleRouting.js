@@ -6,6 +6,7 @@ import {View,Text, SafeAreaView, Image,ScrollView,TouchableOpacity} from "react-
 import {Dimensions, StyleSheet} from "react-native";
 const {width,height}=Dimensions.get('screen');
 import { Header } from 'react-native-elements';
+import Routing from '../App'
 // import {styles} from "../styles/eagleEyeViewStyles";
 // import Input from "../components/Input";
 // import ImageButton from '../components/ImageButtonEagle';
@@ -38,15 +39,15 @@ function ImageButton({title,way,recommendation,view_,rating}){
 }
 
 
-export default class SampleCard extends Component {
+export default class ScheduleRouting extends Component {
   render(){
     return(
       <ScrollView>
-        <Header
+        {/* <Header
             // leftComponent={{ icon: 'menu', color: '#fff' }}
             centerComponent={{ text: 'Visiting Areas', style: { color: '#fff',fontSize:30, fontWeight:"bold" } }}
             // rightComponent={{ icon: 'home', color: '#fff' }}
-        />
+        /> */}
         <View style={styles.imageContainer}>
           <View style={styles.imageView}>
             <Image 
