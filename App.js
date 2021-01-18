@@ -15,6 +15,13 @@ import Map from './screens/Map'
 import Travel from './screens/travel'
 import DetailedTravel from './screens/detailedTravel'
 
+import Cancel_Mark from './src/screens/Cancel_Mark'
+import Complain from './src/screens/Complain'
+import Help from './src/screens/Help'
+import Track_Sch from './src/screens/Track_Sch'
+import Remove_Sch from './src/screens/Remove_Sch'
+
+
 
 import ImagePickers from './screens/image-picker'
 // import TabNavigator from './components/BottomNavigator'
@@ -32,6 +39,12 @@ const AppNavigator = createStackNavigator(
       ImagePickers:ImagePickers,
       Travel:Travel,
       DetailedTravel:DetailedTravel,
+      Remove_Sch:Remove_Sch,
+      Cancel_Mark:Cancel_Mark,
+      Complain:Complain,
+      Help:Help,
+      Track_Sch:Track_Sch,
+
 
       // TabNavigator:TabNavigator,
       

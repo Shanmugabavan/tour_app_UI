@@ -23,7 +23,7 @@ export default class EagleEyeView extends Component {
             />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.imageContainer}  onPress={() => this.props.navigation.navigate('ScheduledRouting')}>
+        <TouchableOpacity style={styles.imageContainer}  onPress={() => this.props.navigation.navigate('Track_Sch')}>
           <View style={styles.imageView}>
             <Image 
             source={require("../assets/images/dampulla.jpg")}
@@ -37,6 +37,22 @@ export default class EagleEyeView extends Component {
             source={require("../assets/images/travelingmethods/Bus.jpg") }
             style={styles.image}/>
             <ImageButton title="Traveling" />
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.imageContainer} onPress={() => this.props.navigation.navigate('Complain')}>
+          <View style={styles.imageView}>
+            <Image 
+            source={require("../assets/images/Complaints_and_Help/Complaint.jpg") }
+            style={styles.image}/>
+            <ImageButton title="Complaint" />
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.imageContainer} onPress={() => this.props.navigation.navigate('Help')}>
+          <View style={styles.imageView}>
+            <Image 
+            source={require("../assets/images/Complaints_and_Help/Help.jpg") }
+            style={styles.image}/>
+            <ImageButton title="Help" />
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.imageContainerProfile} onPress={() => this.props.navigation.navigate('EditProfileScreen')}>
