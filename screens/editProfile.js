@@ -2,12 +2,12 @@ import React,{Component} from 'react';
 import{
     View,
     Text,
-    TouchableOpacity,
     ImageBackground,
     TextInput,
     StyleSheet,
     Button
 } from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import { Header } from 'react-native-elements';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -18,7 +18,7 @@ import BottomSheet from 'reanimated-bottom-sheet';
 import Animated from 'react-native-reanimated';
 // import { styles } from './visitingAreas';
 
-const EditProfileScreen =()=>{
+export default class EditProfileScreen extends React.Component{
     bs=React.createRef();
     fall=new Animated.Value(1);
         
@@ -31,21 +31,21 @@ const EditProfileScreen =()=>{
                 <Text style={styles.PanelSubtitle}>
                     Choose your profile Picture
                 </Text>
-                <TouchableOpacity style={styles.panelButton}>
+                <TouchableOpacity style={styles.panelButton} onPress={() => this.props.navigation.navigate('ImagePickers')}>
                     <Text style={styles.panelButtonTitle}>
                         Take Photo
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.panelButton}>
+                <TouchableOpacity style={styles.panelButton} onPress={() => this.props.navigation.navigate('ImagePickers')}>
                     <Text style={styles.panelButtonTitle}>
                         Choose from Library
                     </Text>
                 </TouchableOpacity>
-                {/* <TouchableOpacity style={styles.panelButton} onPress={()=>this.bs.current.snapTo(1)}>
+                <TouchableOpacity style={styles.panelButton} onPress={()=>this.bs.current.snapTo(2)}>
                     <Text style={styles.panelButtonTitle}>
                         Cancel
                     </Text>
-                </TouchableOpacity> */}
+                </TouchableOpacity>
             </View>
         </View>
         
@@ -61,121 +61,125 @@ const EditProfileScreen =()=>{
         </View>
         
     );
-    return(
-        <View style={styles.container}>
-            {/* <Header
-            // leftComponent={{ icon: 'menu', color: '#fff' }}
-            centerComponent={{ text: 'Edit Profile', style: { color: '#fff',fontSize:30, fontWeight:"bold" } }}
-            // rightComponent={{ icon: 'home', color: '#fff' }}
-            /> */}
-            <BottomSheet
-                ref={this.bs}
-                snapPoints={[320,100,0]}
-                renderContent={this.renderInner}
-                renderHeader={this.renderHeader}
-                initialSnap={2}
-                callbackNode={this.fall}
-                enabledGestureInteraction={true}
-            />
-            <View style={{margin:20}}>
-                <View style={{alignItems:'center'}}>
-                    <TouchableOpacity onPress={()=>this.bs.current.snapTo(0)}>
-                        <View style={{
-                            height:100,
-                            width:100,
-                            borderRadius:15,
-                            justifyContent:'center',
-                            alignItems:'center',
-                            backgroundColor:"black"
-                        }}>
-                            <ImageBackground
-                                source={require("../assets/images/dampulla.jpg")}
-                                style={{height:100,width:100}}
-                                imageStyle={{borderRadius:15}}>
-                                    <View style={{
-                                        flex:1,
-                                        justifyContent:'center',
-                                        alignItems:'center',
-                                    }}>
-                                        <Icon name='camera' size={35} color="#fff" style={{
-                                            opacity:0.7,
-                                            alignItems:'center',
+    render(){
+        return(
+            <View style={styles.container}>
+                {/* <Header
+                // leftComponent={{ icon: 'menu', color: '#fff' }}
+                centerComponent={{ text: 'Edit Profile', style: { color: '#fff',fontSize:30, fontWeight:"bold" } }}
+                // rightComponent={{ icon: 'home', color: '#fff' }}
+                /> */}
+                <BottomSheet
+                    ref={this.bs}
+                    snapPoints={[320,100,0]}
+                    renderContent={this.renderInner}
+                    renderHeader={this.renderHeader}
+                    initialSnap={2}
+                    callbackNode={this.fall}
+                    enabledGestureInteraction={true}
+                />
+                <View style={{margin:20}}>
+                    <View style={{alignItems:'center'}}>
+                        <TouchableOpacity onPress={()=>this.bs.current.snapTo(0)}>
+                            <View style={{
+                                height:100,
+                                width:100,
+                                borderRadius:15,
+                                justifyContent:'center',
+                                alignItems:'center',
+                                backgroundColor:"black"
+                            }}>
+                                <ImageBackground
+                                    source={require("../assets/images/dampulla.jpg")}
+                                    style={{height:100,width:100}}
+                                    imageStyle={{borderRadius:15}}>
+                                        <View style={{
+                                            flex:1,
                                             justifyContent:'center',
-                                            borderWidth:1,
-                                            borderColor:'#fff',
-                                            borderRadius:10,
+                                            alignItems:'center',
                                         }}>
-
-                                        </Icon>
-                                    </View>
-                    
-                            </ImageBackground>
-                        </View>
+                                            <Icon name='camera' size={35} color="#fff" style={{
+                                                opacity:0.7,
+                                                alignItems:'center',
+                                                justifyContent:'center',
+                                                borderWidth:1,
+                                                borderColor:'#fff',
+                                                borderRadius:10,
+                                            }}>
+    
+                                            </Icon>
+                                        </View>
+                        
+                                </ImageBackground>
+                            </View>
+                        </TouchableOpacity>
+                        <Text style={{marginTop:10,fontSize:18,fontWeight:'bold'}}>
+                            Shanmugabavan
+                        </Text>
+                    </View>
+    
+                    <View style={styles.action}>
+                        <FontAwesome name='user-o' size={20}/>
+                        <TextInput
+                            placeholder="Name"
+                            placeholderTextColor='#666666'
+                            style={styles.textInput}
+                        />
+                    </View>
+                    <View style={styles.action}>
+                        <Feather name='phone' size={20}/>
+                        <TextInput
+                            placeholder="Phone number"
+                            placeholderTextColor='#666666'
+                            style={styles.textInput}
+                        />
+                    </View>
+                    <View style={styles.action}>
+                        <FontAwesome name='user-o' size={20}/>
+                        <TextInput
+                            placeholder="NIC"
+                            placeholderTextColor='#666666'
+                            style={styles.textInput}
+                        />
+                    </View>
+                    <TouchableOpacity style={styles.CommandButton} onPress={()=>{}}>
+                        <Text style={styles.panelButtonTitle}>Submit</Text>
                     </TouchableOpacity>
-                    <Text style={{marginTop:10,fontSize:18,fontWeight:'bold'}}>
-                        Shanmugabavan
-                    </Text>
-                </View>
+    
+                    <View style={styles.action}>
+                        <FontAwesome name='user-o' size={20}/>
+                        <TextInput
+                            secureTextEntry={true}
+                            placeholder="Old Password"
+                            placeholderTextColor='#666666'
+                            style={styles.textInput}
+                        />
+                    </View>
+                    <View style={styles.action}>
+                        <FontAwesome name='user-o' size={20}/>
+                        <TextInput 
+                            secureTextEntry={true}
+                            placeholder="New Password"
+                            placeholderTextColor='#666666'
+                            style={styles.textInput}
+                        />
+                    </View>
+                    <TouchableOpacity style={styles.CommandButton} onPress={()=>{}}>
+                        <Text style={styles.panelButtonTitle}>Change Password</Text>
+                    </TouchableOpacity>
 
-                <View style={styles.action}>
-                    <FontAwesome name='user-o' size={20}/>
-                    <TextInput
-                        placeholder="Name"
-                        placeholderTextColor='#666666'
-                        style={styles.textInput}
-                    />
+    
+    
                 </View>
-                <View style={styles.action}>
-                    <Feather name='phone' size={20}/>
-                    <TextInput
-                        placeholder="Phone number"
-                        placeholderTextColor='#666666'
-                        style={styles.textInput}
-                    />
-                </View>
-                <View style={styles.action}>
-                    <FontAwesome name='user-o' size={20}/>
-                    <TextInput
-                        placeholder="NIC"
-                        placeholderTextColor='#666666'
-                        style={styles.textInput}
-                    />
-                </View>
-                <TouchableOpacity style={styles.CommandButton} onPress={()=>{}}>
-                    <Text style={styles.panelButtonTitle}>Submit</Text>
-                </TouchableOpacity>
-
-                <View style={styles.action}>
-                    <FontAwesome name='user-o' size={20}/>
-                    <TextInput
-                        secureTextEntry={true}
-                        placeholder="Old Password"
-                        placeholderTextColor='#666666'
-                        style={styles.textInput}
-                    />
-                </View>
-                <View style={styles.action}>
-                    <FontAwesome name='user-o' size={20}/>
-                    <TextInput 
-                        secureTextEntry={true}
-                        placeholder="New Password"
-                        placeholderTextColor='#666666'
-                        style={styles.textInput}
-                    />
-                </View>
-                <TouchableOpacity style={styles.CommandButton} onPress={()=>{}}>
-                    <Text style={styles.panelButtonTitle}>Change Password</Text>
-                </TouchableOpacity>
-
-
+    
+    
             </View>
-
-
-        </View>
-    );
+        );
+    }
+    
 
     }
-export default EditProfileScreen;
+// export default EditProfileScreen;
     
 
 

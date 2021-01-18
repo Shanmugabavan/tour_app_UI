@@ -11,6 +11,8 @@ import ScheduleRouting from './screens/ScheduleRouting'
 import VisitingArea from './screens/visitingAreas'
 import EditProfileScreen from './screens/editProfile'
 import DetailedVisitingArea from './screens/detailed_visitingArea'
+import Map from './screens/Map'
+import ImagePickers from './screens/image-picker'
 // import TabNavigator from './components/BottomNavigator'
 // import Routing from './routing'
 
@@ -22,7 +24,11 @@ const AppNavigator = createStackNavigator(
       LoginScreen:LoginScreen,
       ScheduledRouting:ScheduleRouting,
       DetailedVisitingArea:DetailedVisitingArea,
+      Map:Map,
+      ImagePickers:ImagePickers,
+
       // TabNavigator:TabNavigator,
+      
 
   },  
   {  

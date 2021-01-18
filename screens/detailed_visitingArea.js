@@ -51,28 +51,41 @@ export default class DetailedVisitingArea extends Component {
             centerComponent={{ text: 'Visiting Areas', style: { color: '#fff',fontSize:30, fontWeight:"bold" } }}
             // rightComponent={{ icon: 'home', color: '#fff' }}
         /> */}
-        <ScrollView style={styles.imageContainer}>
-          <View style={styles.imageView}>
-            <Image 
-            source={require("../assets/images/ninearg.jpg")}
-            style={styles.image}/>
-            <ImageButton 
-                title="Rumassala" 
-                description="Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
-                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
-                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
-                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
-                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
-                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
-                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
-                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
-                Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour"
-                
-                />
-          </View>
+            <View style={styles.imageView}>
+                <Image 
+                source={require("../assets/images/ninearg.jpg")}
+                style={styles.image}/>
+            </View>
+            <View>
+                    <Text style={styles.title}>"Rumassala"</Text>
+                    <Text style={styles.description}>
+                    "Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                    Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                    Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                    Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                    Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                    Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                    Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                    Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour
+                    Rumassala,Formely Know as Bonua vista, is rain-forestd promontory that rises straight out of the sea on the eastern side of Galle Harbour"
+                    </Text> 
+                    
+            </View>
+            <View>
+                <TouchableOpacity style={styles.addScheduleContainer} >
+                    <Text style={styles.addScheduleText}>Add to Schedule</Text>
+                </TouchableOpacity>
+            </View>
+            <View>
+                <TouchableOpacity style={styles.addScheduleContainer} style={{backgroundColor:"green", height:40}} onPress={() => this.props.navigation.navigate('Map')}>
+                    <Text style={styles.addScheduleText}>View in Google Map</Text>
+                </TouchableOpacity>
+            </View>
+            
         </ScrollView>
         
-      </ScrollView>
+    
+
     );
   }
   
@@ -88,7 +101,7 @@ export const styles=StyleSheet.create({
     },
     imageView:{
         width:width,
-        height:height,
+        height:height/2,
         // borderWidth:1,
         borderColor:"#000",
         marginHorizontal:10,
@@ -148,13 +161,15 @@ elevation: 5,
     addScheduleContainer: {
         backgroundColor: 'rgba(0,0,0,5)',
         width: "40%",
-        height: "25%",
-        position: "absolute",
+        height:40,
+        // height: "15%",
+        // position: "absolute",
         bottom:5,
         alignSelf:"center",
         fontSize:100,
         backgroundColor:'blue',
         borderRadius:20,
+        marginTop:20,
 
     },
 
