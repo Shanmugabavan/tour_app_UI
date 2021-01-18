@@ -31,12 +31,12 @@ export default class EagleEyeView extends Component {
             <ImageButton  title="Schedule Routing" />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.imageContainer}>
+        <TouchableOpacity style={styles.imageContainer} onPress={() => this.props.navigation.navigate('Travel')}>
           <View style={styles.imageView}>
             <Image 
-            source={require("../assets/images/dampulla.jpg")}
+            source={require("../assets/images/travelingmethods/Bus.jpg") }
             style={styles.image}/>
-            <ImageButton title="Charges" />
+            <ImageButton title="Traveling" />
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.imageContainerProfile} onPress={() => this.props.navigation.navigate('EditProfileScreen')}>

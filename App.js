@@ -12,6 +12,10 @@ import VisitingArea from './screens/visitingAreas'
 import EditProfileScreen from './screens/editProfile'
 import DetailedVisitingArea from './screens/detailed_visitingArea'
 import Map from './screens/Map'
+import Travel from './screens/travel'
+import DetailedTravel from './screens/detailedTravel'
+
+
 import ImagePickers from './screens/image-picker'
 // import TabNavigator from './components/BottomNavigator'
 // import Routing from './routing'
@@ -26,6 +30,8 @@ const AppNavigator = createStackNavigator(
       DetailedVisitingArea:DetailedVisitingArea,
       Map:Map,
       ImagePickers:ImagePickers,
+      Travel:Travel,
+      DetailedTravel:DetailedTravel,
 
       // TabNavigator:TabNavigator,
       
