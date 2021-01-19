@@ -1,0 +1,4 @@
+1.install npm
+2.install expo
+3.install all dependencies (which is in dependencies in package.json)
+
